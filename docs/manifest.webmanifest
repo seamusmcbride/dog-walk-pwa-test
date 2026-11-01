@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "Goodwalk — dog walk test",
+  "short_name": "Goodwalk",
+  "description": "A private dog-walk tracker test. Walks stay on this device.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f4ed",
+  "theme_color": "#f6f4ed",
+  "orientation": "portrait",
+  "icons": [
+    {"src":"paw-180.png","sizes":"180x180","type":"image/png","purpose":"any"},
+    {"src":"paw.svg","sizes":"any","type":"image/svg+xml","purpose":"maskable"}
+  ]
+}
