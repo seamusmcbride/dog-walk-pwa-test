@@ -2,6 +2,8 @@
 
 A no-account, static PWA prototype for trying dog-walk GPS recording on iPhone Safari and Android browsers.
 
+Live at [Goodwalk test PWA](https://seamusmcbride.github.io/dog-walk-pwa-test/). See [DEPLOYMENT.md](DEPLOYMENT.md) for install steps and data-handling limits.
+
 ## What it does
 
 - Starts GPS only after the user taps **Start a walk**.
