@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6f4ed">
+  <meta name="description" content="A small private dog-walk tracker test. Walks stay on this device.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="paw.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="paw.svg">
+  <link rel="stylesheet" href="app.css">
+  <title>Goodwalk — a dog-walk test</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Goodwalk home"><span class="brand-mark">✦</span> goodwalk</a>
+    <button id="installButton" class="install-button" hidden>Install app</button>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="eyebrow">A LITTLE MORE OUTSIDE</div>
+      <h1>Good things<br>happen on a walk.</h1>
+      <p class="intro">Pick a path, take your dog, and let the day unfold.</p>
+      <div class="dog-art" aria-hidden="true"><span class="sun"></span><span class="hill hill-a"></span><span class="hill hill-b"></span><span class="dog">🐕</span><span class="flower flower-a">✿</span><span class="flower flower-b">✿</span></div>
+    </section>
+
+    <section class="walk-card" aria-labelledby="walkTitle">
+      <div class="card-heading"><div><div class="eyebrow">YOUR WALK</div><h2 id="walkTitle">Ready when you are</h2></div><span class="live-dot" id="statusDot"></span></div>
+      <div class="route-board" aria-label="Local sketch of your walk route">
+        <svg id="routeSvg" viewBox="0 0 360 180" role="img" aria-label="Walk route sketch">
+          <path class="trail-shadow" d="M40 132 C73 119,65 76,112 81 S152 131,190 116 S231 55,273 68 S290 123,325 45" />
+          <path class="trail-line" d="M40 132 C73 119,65 76,112 81 S152 131,190 116 S231 55,273 68 S290 123,325 45" />
+          <path id="gpsTrail" fill="none" stroke="#386fbb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <circle class="route-start" cx="40" cy="132" r="8"/><circle class="route-end" cx="325" cy="45" r="9"/>
+          <circle id="gpsDot" cx="40" cy="132" r="7" hidden/>
+          <text x="25" y="163">START</text><text x="291" y="28">YOU</text>
+        </svg>
+        <div class="route-stamp">SAMPLE PATH · NOT A NAVIGATION MAP</div>
+      </div>
+      <div class="stats"><div><strong id="distance">0.00</strong><span>km</span><small>DISTANCE</small></div><div><strong id="duration">00:00</strong><small>TIME</small></div><div><strong id="points">0</strong><small>GPS POINTS</small></div></div>
+      <p class="gps-note" id="gpsNote">Your route is saved only on this device. Location starts only when you tap Start.</p>
+      <div class="walk-actions"><button id="startButton" class="primary">Start a walk</button><button id="pauseButton" class="secondary" hidden>Pause</button><button id="finishButton" class="secondary finish" hidden>Finish</button></div>
+    </section>
+
+    <section class="trail-section">
+      <div class="section-heading"><div><div class="eyebrow">FIND YOUR FEET</div><h2>Little trail ideas</h2></div><span class="tag">SAMPLE</span></div>
+      <article class="trail-card"><div class="trail-icon">🌿</div><div class="trail-copy"><h3>The leafy loop</h3><p>A gentle sample walk for stretching your legs.</p><div class="trail-meta"><span>◷ 25 min</span><span>↗ Easy</span><span>📍 Demo only</span></div></div><button class="trail-go" id="chooseTrail" aria-label="Choose The leafy loop">↗</button></article>
+      <p class="small-note">This is a visual demo, not a real mapped or safety-checked route.</p>
+    </section>
+
+    <section class="streak-card"><div class="streak-emoji">☀️</div><div><div class="eyebrow">A KIND LITTLE NUDGE</div><h2 id="streakTitle">Every walk counts.</h2><p id="streakText">No streaks to lose. Just fresh air when it suits you.</p></div></section>
+
+    <section class="history-section"><div class="section-heading"><div><div class="eyebrow">YOUR PAWPRINTS</div><h2>Recent walks</h2></div><button id="clearButton" class="text-button" hidden>Clear</button></div><div id="historyList" class="history-list"><p class="empty">Your finished walks will show up here.</p></div></section>
+    <p class="privacy">Private by default. This test stores walk summaries and GPS points in this browser only. No account, group sharing, video generation, or server sync is connected.</p>
+  </main>
+  <nav class="bottom-nav" aria-label="Main navigation"><a class="active" href="#home">⌂ <span>Today</span></a><a href="#walkTitle">◎ <span>Walk</span></a><a href="#historyList">♡ <span>My walks</span></a></nav>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
