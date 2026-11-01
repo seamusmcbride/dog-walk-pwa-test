@@ -9,5 +9,8 @@
   "background_color": "#f6f4ed",
   "theme_color": "#f6f4ed",
   "orientation": "portrait",
-  "icons": [{"src":"paw.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+  "icons": [
+    {"src":"paw-180.png","sizes":"180x180","type":"image/png","purpose":"any"},
+    {"src":"paw.svg","sizes":"any","type":"image/svg+xml","purpose":"maskable"}
+  ]
 }
